@@ -1,0 +1,261 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.sale-alert {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    position: relative;
+}
+
+
+.menu-toggle {
+    display: none;
+}
+
+
+.variant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+    margin-left: auto;
+    padding: 0;
+}
+
+.variant img {
+    align-items: center;
+    width: 92px;
+    height: 92px;
+    
+}
+.variant li {
+    padding: 15px;
+    text-align: center;
+}
+
+.variant li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+
+.banner {
+    background-image: url('./Images/image.png'); 
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; 
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-left: auto;
+    padding: 0;
+}
+
+
+.menu-toggle:checked + .hamburger + .menu {
+    display: flex; 
+    flex-direction: column;
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.menu li {
+    padding: 15px;
+    text-align: left;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1; 
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.main-banner {
+    transition: transform 0.3s ease; 
+}
+
+.menu-toggle:checked ~ .main-banner {
+    transform: translateX(250px); 
+}
+
+.variant-another {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+    margin-left: auto;
+    padding: 0;
+}
+
+.variant-another img {
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    
+}
+.variant-another li {
+    padding: 15px;
+    text-align: center;
+}
+
+.variant-another li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; 
+}
+
+.chat-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #545658; 
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.chat-button:hover {
+    background-color: #1351cc; 
+}
+
+.chat-button i {
+    margin-right: 8px; 
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .menu {
+        display: none; 
+    }
+    .banner {
+        background-image: url('./Images/mobile-banner.png');
+        margin-top: 20px;
+        height: 393px;
+        width: 450px;
+        margin-left: 20px;
+    }
+    .hamburger {
+        display: block; 
+    }
+
+    .nav-right {
+        display: none; 
+    }
+
+    .nav-right .fas {
+        display: unset; 
+    }
+
+    .menu-toggle:checked + .hamburger + .menu {
+        display: flex; 
+        flex-direction: column;
+        position: fixed;
+        background-color: #fff;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        margin-top: 35px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+        padding-top: 60px;
+        z-index: 1000;
+    }
+
+    .variant{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .variant-another{
+        display: flex;
+        flex-direction: column;
+      
+    }
+      
+    .variant-another li img{
+        height: 229px;
+        width: 229px;
+    }
+}
